@@ -6,3 +6,14 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Contact {
+  id             Int       @id @default(autoincrement())
+  phoneNumber    String?
+  email          String?
+  linkedId       Int?
+  linkPrecedence String
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  deletedAt      DateTime?
+}
