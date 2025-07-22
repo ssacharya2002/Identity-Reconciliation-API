@@ -38,6 +38,13 @@ model Contact {
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
   deletedAt      DateTime?
+
+  @@index([email])
+  @@index([phoneNumber])
+  @@index([linkedId])
+  @@index([deletedAt])
+  
+  @@map("contact")
 }
 ```
 
